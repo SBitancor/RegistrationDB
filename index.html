@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="script.js"></script>  
+    </head>
+    <body>
+        <div id="login" class="login">
+        <h2>ACCOUNT LOGIN</h2>
+            <form action="/action_page.php" method="post">
+                <div class="loginFirst">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="pass">Password:</label><br>
+                    <input type="password" id="pass" name="pass"><br>
+                </div>
+                <input class="checkbox" type="checkbox" id="showPass" name="showPass" onclick="showPassword()">
+                <label for="showPass">Show Password</label><br><br>
+                <button>LOG-IN</button><br>
+                <span onclick="register()">Dont have an account? Register here.</span>
+            </form>
+        </div>
+        <div id="registration" class="registration"><br>
+            <h2>ACCOUNT REGISTRATION</h2>
+            <div class="row">
+                <form action="/action_page.php" method="post">
+                <div class="column" style="background-color:white;">
+                    <div class="registrationFirst"><label for="lastName">Last Name:</label><br>
+                        <input type="text" id="lastName" name="lastName"><br>
+                        <label for="firstName">First Name:</label><br>
+                        <input type="text" id="firstName" name="firstName"><br>
+                        <label for="midName">M.I.</label><br>
+                        <input type="text" id="midName" name="midName"><br>
+                        <label for="studNum">Student Number:</label><br>
+                        <input type="text" id="studNum" name="studNum"><br>
+                        <label for="yearLevel">Year Level:</label><br>
+                        <input list="yearLevel" name="yearLevel">
+                        <datalist id="yearLevel">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                        </datalist>
+                        <label for="bday">Birthday:</label><br>
+                        <input type="date" id="bday" name="bday"><br>
+                        <label for="mobNum">Mobile Number:</label><br>
+                        <input type="text" id="mobNum" name="mobNum"><br>
+                        <label for="email">UE Email Address:</label><br>
+                        <input type="email" id="email" name="email"><br>
+                    </div>
+                </div>
+                <div class="column" style="background-color:white;">
+                    <div class="registrationFirst">
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" name="username"><br>
+                        <label for="pass">Password:</label><br>
+                        <input type="password" id="pass" name="pass"><br>
+                        <label for="rptPass">Confirm Password:</label><br>
+                        <input type="password" id="rptPass" name="rptPass"><br>
+                    </div>
+                    <br><span style="color: white;">..</span>
+                    <input type="checkbox" id="termsCon" name="termsCon" onclick="showPassword()">
+                    <label for="termsCon">Terms and Conditions:</label><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ornare nulla. Aliquam maximus libero at arcu cursus, malesuada bibendum nulla accumsan. </p>
+                    <button>REGISTER</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
