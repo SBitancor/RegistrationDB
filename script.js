@@ -19,5 +19,18 @@ function register(){
 }
 
 function dataValidation(){
-    window.alert(5 + 6);
+    var lastNameValue = document.getElementById("lastName").value;
+    /*var firstNameValue = document.getElementById("firstName").value;
+    var midNameValue = document.getElementById("midname").value;
+    var studNumValue = document.getElementById("studNum").value;
+    var yearLevelValue = document.getElementById("yearLevel").value;
+    var mobNumValue = document.getElementById("mobNum").value;
+    var bdayValue = document.getElementById("bday").value;
+    var emailValue  = document.getElementById("email").value;
+    var usernameValue = document.getElementById("username").value;
+    var passValue  = document.getElementById("pass").value;
+    var rptPassValue  = document.getElementById("rptPass").value;
+    */
+    
+    window.alert(lastNameValue);
 }
