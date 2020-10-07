@@ -17,3 +17,7 @@ function register(){
         y.style.display = "block";
     }
 }
+
+function dataValidation(){
+    window.alert(5 + 6);
+}
