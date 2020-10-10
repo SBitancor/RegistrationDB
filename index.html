@@ -23,34 +23,84 @@
                 <span onclick="register()">Dont have an account? Register here.</span>
             </form>
         </div>
-        <div id="registration" class="registration"><br>
+        <div id="registration" class="registration">
             <h2>ACCOUNT REGISTRATION</h2>
             <div class="row">
                 <form action="/action_page.php" method="post">
                 <div class="column" style="background-color:white;">
-                    <div class="registrationFirst"><label for="lastName">Last Name:</label><br>
-                        <input type="text" id="lastName" name="lastName"><br>
-                        <label for="firstName">First Name:</label><br>
-                        <input type="text" id="firstName" name="firstName"><br>
-                        <label for="midName">M.I.</label><br>
-                        <input type="text" id="midName" name="midName"><br>
-                        <label for="studNum">Student Number:</label><br>
-                        <input type="text" id="studNum" name="studNum"><br>
-                        <label for="yearLevel">Year Level:</label><br>
-                        <input list="yearLevel" name="yearLevel">
-                        <datalist id="yearLevel">
-                            <option value="1">
-                            <option value="2">
-                            <option value="3">
-                            <option value="4">
-                            <option value="5">
-                        </datalist>
-                        <label for="bday">Birthday:</label><br>
-                        <input type="date" id="bday" name="bday"><br>
-                        <label for="mobNum">Mobile Number:</label><br>
-                        <input type="text" id="mobNum" name="mobNum"><br>
-                        <label for="email">UE Email Address:</label><br>
-                        <input type="email" id="email" name="email"><br>
+                    <div class="registrationFirst">
+                        
+                        <div class="form-control">
+                            <label for="lastName">Last Name:</label>
+                            <br> <input type="text" id="lastName" name="lastName"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                    
+                        <div class="form-control">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="midName">M.I.</label><br>
+                            <input type="text" id="midName" name="midName" maxlength="2"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="studNum">Student Number:</label><br>
+                            <input type="text" id="studNum" name="studNum" minlength="11" maxlength="11"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="yearLevel">Year Level:</label>
+                            <select id="yearLevel" name="yearLevel">
+                                <option value="firstYear">First Year</option>
+                                <option value="secondYear">Second Year</option>
+                                <option value="thirdYear">Third Year</option>
+                                <option value="fourthYear">Fourth Year</option>
+                                <option value="fifthYear">Fifth Year</option>
+                            </select><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="bday">Birthday:</label><br>
+                            <input type="date" id="bday" name="bday"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="mobNum">Mobile Number:</label><br>
+                            <input type="text" id="mobNum" name="mobNum"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="email">UE Email Address:</label><br>
+                            <input type="email" id="email" name="email"><br>
+                            <small>Error message</small>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                        
                     </div>
                 </div>
                 <div class="column" style="background-color:white;">
@@ -66,7 +116,7 @@
                     <input type="checkbox" id="termsCon" name="termsCon" onclick="showPassword()">
                     <label for="termsCon">Terms and Conditions:</label><br>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ornare nulla. Aliquam maximus libero at arcu cursus, malesuada bibendum nulla accumsan. </p>
-                    <button onclick="dataValidation()">REGISTER</button>
+                    <button onclick="return dataValidation()">REGISTER</button>
                 </div>
                 </form>
             </div>
