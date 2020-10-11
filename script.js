@@ -44,13 +44,18 @@ function dataValidation(){
     var yearLevelValue = document.getElementById("yearLevel").value;
     var mobNumValue = document.getElementById("mobNum").value;
     var bdayValue = document.getElementById("bday").value;
-    var emailValue  = document.getElementById("email").value;
-    var usernameValue = document.getElementById("username").value;
-    var passValue  = document.getElementById("pass").value;
+    var emailValue  = document.getElementById("emailInput").value;
+    var usernameValue = document.getElementById("usernameInput").value;
+    var passValue  = document.getElementById("passInput").value;
     var rptPassValue  = document.getElementById("rptPass").value;
+    var termsConValue = document.getElementById("termsCon");
     
     var letters = /^[A-Za-z]+$/;
     var numbers = /^[0-9]+$/;
+    var mobile = /[+]63/g;
+    var emailReg = /[@]ue.edu.ph/gi;
+    var usernameReg = /([A-Z-_])/gi;
+    var alphaNum = /^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$/i;
     
     //Last Name
     if (lastNameValue == ""){
@@ -89,6 +94,10 @@ function dataValidation(){
     }
     
     //Student Number
+    if (studNumValue.length != 11){
+        setErrorFor(studNum, 'Please enter your full student number');
+        return false;
+    }
     if (numbers.test(studNumValue)){
         setSuccessFor(studNum);
     } else {
@@ -96,28 +105,100 @@ function dataValidation(){
         return false;
     }
     
-    
-    var testing = Number(document.getElementById("bday"));
     //Birth Date
-    if (bdayValue >= 2002-10-10){
-        setErrorFor(bday, 'Legal Age Only');
+    if (bdayValue == ""){
+        setErrorFor(bday, 'Birth date cannot be blank');
         return false;
-        
+    } else {
+        setSuccessFor(bday);
+        var newBdayValue = bdayValue.replace(/-/, "");   //Converting Birth Date into number
+    }
+    if (newBdayValue > "20021010"){
+        setErrorFor(bday, 'User must be legal age');
+        return false;
     } else {
         setSuccessFor(bday);
     }
     
-    
-    alert(testing);
-    
     //Mobile Number
-    if (numbers.test(mobNumValue)){
+    if (mobile.test(mobNumValue)){
+        if (mobNumValue.length != 13){
+            setErrorFor(mobNum, 'Please enter full mobile number');
+            return false;
+        }
         setSuccessFor(mobNum);
     } else {
-        setErrorFor(mobNum, 'Numeric Characters Only');
+        setErrorFor(mobNum, 'Mobile number must start with +63');
         return false;
     }
     
+    //Email
+    if (emailValue == ""){
+        setErrorFor(emailInput, 'Email cannot be blank');
+        return false;
+    }
+    if (emailReg.test(emailValue)){
+        //var newEmailValue = emailValue.replace(/@ue.edu.ph/, "");   //Check if null value for email
+        if (emailValue.length < 15){
+            setErrorFor(emailInput, 'Please enter full UE Email Address');
+            return false;
+        }
+        setSuccessFor(emailInput);
+    } else {
+        setErrorFor(emailInput, 'Please provide valid UE Email Address');
+        return false;
+    }
     
+    //Username
+    if (usernameValue == ""){
+        setErrorFor(usernameInput, 'Username cannot be blank');
+        return false;
+    } else {
+        if (usernameReg.test(usernameValue)){
+            if (usernameValue.length > 7 && usernameValue.length <16){
+                setSuccessFor(usernameInput);
+            } else {
+                setErrorFor(usernameInput, 'Minimum: 8 Maximum: 15');
+                return false;
+            }
+        } else {
+            setErrorFor(usernameInput, 'Only accept alphabets, dash, and underscore');
+            return false;
+        }
+    }
     
+    //Password
+    if (passValue == ""){
+        
+        setErrorFor(passInput, 'Password cannot be blank');
+        return false;
+    } else {
+        if (alphaNum.test(passValue)){
+            if(passValue.length >7 && passValue.length <21){
+                setSuccessFor(passInput);
+            } else {
+                setErrorFor(passInput, 'Minimum: 8 Maximum: 20');
+                return false;
+            }
+        } else {
+            setErrorFor(passInput, 'Only accept alphanumeric combination');
+            return false;
+        }
+    }
+    
+    //Repeat Password
+    if (passValue == rptPassValue){
+        setSuccessFor(rptPass);
+    } else {
+        setErrorFor(rptPass, 'Password mismatch');
+        return false;
+    }
+    
+    //Terms and Conditions
+    if (termsConValue.checked){
+        setSuccessFor(termsCon);
+    } else {
+        setErrorFor(termsCon, 'Please agree on the terms and conditions to continue');
+        return false;
+    }
 }
