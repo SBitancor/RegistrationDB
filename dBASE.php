@@ -9,7 +9,7 @@ class config {
 		try{
 			$conn = new PDO ("mysql:host=$servername;dbname=registration",$dbusername,$dbpassword);
 			$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-			echo "Connected succesfully";
+			echo "You are registered!";
 			}
 		catch (PDOException $e) {
 			echo "Connection Failed!" . $e->getMessage();
