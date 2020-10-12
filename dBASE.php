@@ -3,11 +3,11 @@ class config {
 	public static function connect(){
 		$servername = "localhost";
 		$dbusername = "root";
-		$dbpassword = "signupdb";
+		$dbpassword = "";
 		//database name is signupdb
 
 		try{
-			$conn - new PDO ("mysql:host=$servername;dbname=registrations",$dbusername,$dbpassword);
+			$conn = new PDO ("mysql:host=$servername;dbname=registration",$dbusername,$dbpassword);
 			$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			echo "Connected succesfully";
 			}
