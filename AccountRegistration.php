@@ -34,6 +34,9 @@ function insertRecord($last_name,$first_name,$mid_initial,$studnumber,$year_leve
  require 'openDB.php';
      
   $sql = "INSERT INTO dbase (lastName, firstName, middleInitial, studNumber, YearLevel, Birthday, Mobile, Email, Username, Password) VALUES (?,?,?,?,?,?,?,?,?,?)";
+  echo '<script>
+				alert ("ERROR: Email/Username already used");
+				</script>';
      
      
   // use exec() because no results are returned 
